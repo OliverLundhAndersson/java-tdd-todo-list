@@ -68,5 +68,12 @@ class TodoListTest {
         todoList.addTask("test");
         boolean incomplete1 = todoList.incompleteTask("test");
         assertFalse(incomplete1);
+
+        todoList.completeTask("test");
+        boolean incomplete2 = todoList.incompleteTask("test");
+        assertTrue(incomplete2);
+
+        boolean incomplete3 = todoList.incompleteTask("test1");
+        assertFalse(incomplete3);
     }
 }
