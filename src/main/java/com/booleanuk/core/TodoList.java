@@ -62,5 +62,15 @@ public class TodoList {
         System.out.println(name + " is not the name of a task.");
         return false;
     }
+
+    public ArrayList<Task> getCompletedTasks() {
+        ArrayList<Task> completedTasks = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task.isCompleted()) {
+                completedTasks.add(task);
+            }
+        }
+        return completedTasks;
+    }
 }
 
