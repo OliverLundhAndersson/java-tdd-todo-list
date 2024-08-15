@@ -3,9 +3,11 @@ package com.booleanuk.extension;
 public class TaskExtension {
     private boolean completed = false;
     private String name;
+    private final int id;
 
-    public TaskExtension(String name) {
+    public TaskExtension(String name, int id) {
         this.name = name;
+        this.id = id;
     }
 
     public boolean isCompleted() {
@@ -14,6 +16,10 @@ public class TaskExtension {
 
     public String getName() {
         return name;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public boolean setCompleted() {

@@ -7,26 +7,23 @@ import java.util.Collections;
 
 public class TodoListExtension {
     private ArrayList<TaskExtension> tasks = new ArrayList<>();
+    private int idCounter = 0;
 
-    public boolean addTask(String name) {
-        if (tasks.isEmpty()) {
-            TaskExtension task = new TaskExtension(name);
-            tasks.add(task);
-            return true;
-        }
+    public int addTask(String name) {
+
         for (int i = 0; i < tasks.size(); i++) {
-            if (tasks.get(i).getName().equals(name)) {
-                System.out.println("A task with that name already exists");
-                return false;
-            } else if (tasks.get(i).getName().compareTo(name) > 0) {
-                TaskExtension task = new TaskExtension(name);
+            if (tasks.get(i).getName().compareTo(name) > 0) {
+                TaskExtension task = new TaskExtension(name, idCounter);
+                idCounter += 1;
                 tasks.add(i, task);
-                return true;
+                return idCounter-1;
             }
         }
-        TaskExtension task = new TaskExtension(name);
+
+        TaskExtension task = new TaskExtension(name, idCounter);
+        idCounter += 1;
         tasks.add(task);
-        return true;
+        return idCounter-1;
     }
 
     public ArrayList<TaskExtension> viewTask(boolean ascending) {
