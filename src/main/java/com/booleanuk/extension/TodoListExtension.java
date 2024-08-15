@@ -82,9 +82,24 @@ public class TodoListExtension {
     }
 
     public boolean search(String name) {
+        ArrayList<TaskExtension> tasksContainingName = new ArrayList<>();
         for (TaskExtension task : tasks) {
             if (task.getName().equals(name)) {
-                System.out.println(task.getName() + " is completed: " + task.isCompleted());
+                System.out.println(task.getName() + " was created at" + " is completed: " + task.isCompleted());
+                tasksContainingName.add(task);
+            }
+        }
+        if (!tasksContainingName.isEmpty()) {
+            return true;
+        }
+        System.out.println("Task was not found");
+        return false;
+    }
+
+    public boolean search(int id) {
+        for (TaskExtension task : tasks) {
+            if (task.getId() == id) {
+                System.out.println(task.getName() + " was created at " + " is completed: " + task.isCompleted());
                 return true;
             }
         }
