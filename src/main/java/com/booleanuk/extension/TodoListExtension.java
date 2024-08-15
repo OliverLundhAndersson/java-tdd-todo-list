@@ -1,6 +1,5 @@
 package com.booleanuk.extension;
 
-import com.booleanuk.core.Task;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,12 +30,12 @@ public class TodoListExtension {
             ArrayList<TaskExtension> reverseTasks = new ArrayList<>(tasks);
             Collections.reverse(reverseTasks);
             for (TaskExtension task : reverseTasks) {
-                System.out.println(task.getName() + " is completed: " + task.isCompleted());
+                System.out.println(task.getName() + " was created at " + task.getDate() + ", is completed: " + task.isCompleted());
             }
             return reverseTasks;
         }
         for (TaskExtension task : tasks) {
-            System.out.println(task.getName() + " is completed: " + task.isCompleted());
+            System.out.println(task.getName() + " was created at " + task.getDate() + ", is completed: " + task.isCompleted());
         }
         return tasks;
     }
@@ -68,6 +67,9 @@ public class TodoListExtension {
                 completedTasks.add(task);
             }
         }
+        for (TaskExtension task : completedTasks) {
+            System.out.println(task.getName() + " was created at " + task.getDate() + ", is completed: " + task.isCompleted());
+        }
         return completedTasks;
     }
 
@@ -78,6 +80,9 @@ public class TodoListExtension {
                 incompleteTasks.add(task);
             }
         }
+        for (TaskExtension task : incompleteTasks) {
+            System.out.println(task.getName() + " was created at " + task.getDate() + ", is completed: " + task.isCompleted());
+        }
         return incompleteTasks;
     }
 
@@ -85,7 +90,7 @@ public class TodoListExtension {
         ArrayList<TaskExtension> tasksContainingName = new ArrayList<>();
         for (TaskExtension task : tasks) {
             if (task.getName().equals(name)) {
-                System.out.println(task.getName() + " was created at" + " is completed: " + task.isCompleted());
+                System.out.println(task.getName() + " was created at" + task.getDate() + ", is completed: " + task.isCompleted());
                 tasksContainingName.add(task);
             }
         }
@@ -99,7 +104,7 @@ public class TodoListExtension {
     public boolean search(int id) {
         for (TaskExtension task : tasks) {
             if (task.getId() == id) {
-                System.out.println(task.getName() + " was created at " + " is completed: " + task.isCompleted());
+                System.out.println(task.getName() + " was created at " + task.getDate() + ", is completed: " + task.isCompleted());
                 return true;
             }
         }
@@ -134,7 +139,7 @@ public class TodoListExtension {
         for (TaskExtension task : tasks) {
             if (task.getId() == id) {
                 task.setName(newName);
-                System.out.println("The tasks new name is" + newName);
+                System.out.println("The tasks new name is " + newName);
                 return true;
             }
         }

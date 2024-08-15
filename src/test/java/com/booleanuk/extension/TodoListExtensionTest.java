@@ -14,6 +14,7 @@ public class TodoListExtensionTest {
 
     @Test
     public void testAddTask() {
+        System.out.println("------------Test addTask------------");
         todoList = new TodoListExtension();
         int add1 = todoList.addTask("test");
         assertEquals(add1, 0);
@@ -24,6 +25,7 @@ public class TodoListExtensionTest {
 
     @Test
     public void testViewTask() {
+        System.out.println("------------Test viewTask------------");
         todoList = new TodoListExtension();
         ArrayList<TaskExtension> view1 = todoList.viewTask(true);
         assertEquals(view1.size(), 0);
@@ -54,6 +56,7 @@ public class TodoListExtensionTest {
 
     @Test
     public void testCompleteTask() {
+        System.out.println("------------Test completeTask------------");
         todoList = new TodoListExtension();
         int id0 = todoList.addTask("test");
         boolean complete1 = todoList.completeTask(id0);
@@ -69,6 +72,7 @@ public class TodoListExtensionTest {
 
     @Test
     public void testIncompleteTask() {
+        System.out.println("------------Test incompleteTask------------");
         todoList = new TodoListExtension();
         int id0 = todoList.addTask("test");
         boolean incomplete1 = todoList.incompleteTask(id0);
@@ -85,6 +89,7 @@ public class TodoListExtensionTest {
 
     @Test
     public void testGetCompletedTasks() {
+        System.out.println("------------Test getCompletedTask------------");
         todoList = new TodoListExtension();
         int id0 = todoList.addTask("test");
         int id1 = todoList.addTask("test2");
@@ -111,6 +116,7 @@ public class TodoListExtensionTest {
 
     @Test
     public void testGetIncompleteTasks() {
+        System.out.println("------------Test getIncompleteTask------------");
         todoList = new TodoListExtension();
         int id0 = todoList.addTask("test");
         int id1 = todoList.addTask("test2");
@@ -132,6 +138,7 @@ public class TodoListExtensionTest {
 
     @Test
     public void testSearch() {
+        System.out.println("------------Test search------------");
         todoList = new TodoListExtension();
         boolean search1 = todoList.search("test");
         assertFalse(search1);
@@ -152,6 +159,7 @@ public class TodoListExtensionTest {
 
     @Test
     public void testRemoveTask() {
+        System.out.println("------------Test removeTask------------");
         todoList = new TodoListExtension();
         boolean remove1 = todoList.removeTask(0);
         assertFalse(remove1);
@@ -166,6 +174,7 @@ public class TodoListExtensionTest {
 
     @Test
     public void testDate() {
+        System.out.println("------------Test date------------");
         todoList = new TodoListExtension();
         int id0 = todoList.addTask("dateTest");
         assertInstanceOf(Date.class, todoList.getTask(id0).getDate());
@@ -174,6 +183,7 @@ public class TodoListExtensionTest {
 
     @Test
     public void testEditTaskName() {
+        System.out.println("------------Test editTaskName------------");
         todoList = new TodoListExtension();
         int id0 = todoList.addTask("dateTest");
         boolean editName1 = todoList.editTaskName(id0, "Testing new name");
