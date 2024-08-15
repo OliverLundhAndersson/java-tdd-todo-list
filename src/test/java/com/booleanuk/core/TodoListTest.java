@@ -3,6 +3,7 @@ package com.booleanuk.core;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TodoListTest {
@@ -12,5 +13,8 @@ class TodoListTest {
         todoList = new TodoList();
         boolean add1 = todoList.addTask("test");
         assertTrue(add1);
+
+        boolean add2 = todoList.addTask("test");
+        assertFalse(add2);
     }
 }
