@@ -92,5 +92,9 @@ public class TodoList {
         System.out.println("Task was not found");
         return false;
     }
+
+    public boolean removeTask(String name) {
+        return false;
+    }
 }
 
