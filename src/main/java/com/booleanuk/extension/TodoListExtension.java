@@ -107,11 +107,11 @@ public class TodoListExtension {
         return false;
     }
 
-    public boolean removeTask(String name) {
+    public boolean removeTask(int id) {
         for (TaskExtension task : tasks) {
-            if (task.getName().equals(name)) {
+            if (task.getId() == id) {
                 tasks.remove(task);
-                System.out.println(name + " was removed from the todo-list");
+                System.out.println("ID: " + id + ", " + task.getName() + " was removed from the todo-list");
                 return true;
             }
         }
