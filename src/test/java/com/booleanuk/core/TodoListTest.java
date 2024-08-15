@@ -37,8 +37,8 @@ class TodoListTest {
 
         // test descending
         ArrayList<Task> view3 = todoList.viewTask(true);
-        assertEquals(view2.getFirst().getName(), "test2");
-        assertEquals(view2.get(1).getName(), "test1");
-        assertEquals(view2.get(2).getName(), "test");
+        assertEquals(view3.getFirst().getName(), "test2");
+        assertEquals(view3.get(1).getName(), "test1");
+        assertEquals(view3.get(2).getName(), "test");
     }
 }

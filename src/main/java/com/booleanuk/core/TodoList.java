@@ -1,6 +1,8 @@
 package com.booleanuk.core;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class TodoList {
     private ArrayList<Task> tasks = new ArrayList<>();
@@ -27,6 +29,11 @@ public class TodoList {
     }
 
     public ArrayList<Task> viewTask(boolean ascending) {
+        if (ascending) {
+            ArrayList<Task> reverseTasks = (ArrayList<Task>) tasks.clone();
+            Collections.reverse(reverseTasks);
+            return reverseTasks;
+        }
         return tasks;
     }
 }
