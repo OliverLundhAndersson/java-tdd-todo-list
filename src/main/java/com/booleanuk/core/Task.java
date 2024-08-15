@@ -20,4 +20,13 @@ public class Task {
         completed = true;
         return true;
     }
+
+    public boolean setIncomplete() {
+        if (!completed) {
+            System.out.println("Task is already incomplete");
+            return false;
+        }
+        completed = false;
+        return true;
+    }
 }

@@ -46,5 +46,15 @@ public class TodoList {
         System.out.println(name + " is not the name of a task.");
         return false;
     }
+
+    public boolean incompleteTask(String name) {
+        for (Task task : tasks) {
+            if (task.getName().equals(name)) {
+                return task.setIncomplete();
+            }
+        }
+        System.out.println(name + " is not the name of a task.");
+        return false;
+    }
 }
 
