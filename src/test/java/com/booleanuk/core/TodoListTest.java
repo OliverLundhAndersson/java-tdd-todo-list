@@ -24,5 +24,21 @@ class TodoListTest {
         todoList = new TodoList();
         ArrayList<Task> view1 = todoList.viewTask(true);
         assertEquals(view1.size(), 0);
+
+        // Test ascending
+        todoList.addTask("test");
+        todoList.addTask("test2");
+        todoList.addTask("test1");
+        ArrayList<Task> view2 = todoList.viewTask(false);
+        assertEquals(view2.size(), 3);
+        assertEquals(view2.getFirst().getName(), "test");
+        assertEquals(view2.get(1).getName(), "test1");
+        assertEquals(view2.get(2).getName(), "test2");
+
+        // test descending
+        ArrayList<Task> view3 = todoList.viewTask(true);
+        assertEquals(view2.getFirst().getName(), "test2");
+        assertEquals(view2.get(1).getName(), "test1");
+        assertEquals(view2.get(2).getName(), "test");
     }
 }
