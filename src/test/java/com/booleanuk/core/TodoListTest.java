@@ -130,6 +130,10 @@ class TodoListTest {
         todoList.addTask("test");
         boolean search2 = todoList.search("test");
         assertTrue(search2);
+
+        todoList.removeTask("test");
+        boolean search3 = todoList.search("test");
+        assertFalse(search3);
     }
 
     @Test
