@@ -54,14 +54,14 @@ public class TodoListExtensionTest {
     @Test
     public void testCompleteTask() {
         todoList = new TodoListExtension();
-        todoList.addTask("test");
-        boolean complete1 = todoList.completeTask("test");
+        int id0 = todoList.addTask("test");
+        boolean complete1 = todoList.completeTask(id0);
         assertTrue(complete1);
 
-        boolean complete2 = todoList.completeTask("test");
+        boolean complete2 = todoList.completeTask(id0);
         assertFalse(complete2);
 
-        boolean complete3 = todoList.completeTask("test1");
+        boolean complete3 = todoList.completeTask(1);
         assertFalse(complete3);
     }
 
