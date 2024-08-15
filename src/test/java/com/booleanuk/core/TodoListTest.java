@@ -120,4 +120,11 @@ class TodoListTest {
         assertEquals(incomplete3.getFirst().getName(), "test");
         assertEquals(incomplete3.get(1).getName(), "test2");
     }
+
+    @Test
+    public void testSearch() {
+        todoList = new TodoList();
+        boolean search1 = todoList.search("test");
+        assertFalse(search1);
+    }
 }
