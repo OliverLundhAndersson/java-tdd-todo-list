@@ -11,4 +11,13 @@ public class Task {
     public String getName() {
         return name;
     }
+
+    public boolean setCompleted() {
+        if (completed) {
+            System.out.println("Task is already completed");
+            return false;
+        }
+        completed = true;
+        return true;
+    }
 }

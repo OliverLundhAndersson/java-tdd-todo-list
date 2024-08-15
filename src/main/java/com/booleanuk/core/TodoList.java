@@ -30,7 +30,7 @@ public class TodoList {
 
     public ArrayList<Task> viewTask(boolean ascending) {
         if (ascending) {
-            ArrayList<Task> reverseTasks = (ArrayList<Task>) tasks.clone();
+            ArrayList<Task> reverseTasks = new ArrayList<Task>(tasks);
             Collections.reverse(reverseTasks);
             return reverseTasks;
         }
@@ -38,7 +38,12 @@ public class TodoList {
     }
 
     public boolean completeTask(String name) {
-        return true;
+        for (Task task : tasks) {
+            if (task.getName().equals(name)) {
+                return task.setCompleted();
+            }
+        }
+        return false;
     }
 }
 

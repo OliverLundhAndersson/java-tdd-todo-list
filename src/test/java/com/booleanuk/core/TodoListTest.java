@@ -40,6 +40,12 @@ class TodoListTest {
         assertEquals(view3.getFirst().getName(), "test2");
         assertEquals(view3.get(1).getName(), "test1");
         assertEquals(view3.get(2).getName(), "test");
+
+        ArrayList<Task> view4 = todoList.viewTask(false);
+        assertEquals(view4.size(), 3);
+        assertEquals(view4.getFirst().getName(), "test");
+        assertEquals(view4.get(1).getName(), "test1");
+        assertEquals(view4.get(2).getName(), "test2");
     }
 
     @Test
@@ -48,5 +54,8 @@ class TodoListTest {
         todoList.addTask("test");
         boolean complete1 = todoList.completeTask("test");
         assertTrue(complete1);
+
+        boolean complete2 = todoList.completeTask("test");
+        assertFalse(complete2);
     }
 }
