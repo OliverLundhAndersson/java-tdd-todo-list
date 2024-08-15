@@ -137,5 +137,9 @@ class TodoListTest {
         todoList = new TodoList();
         boolean remove1 = todoList.removeTask("test");
         assertFalse(remove1);
+
+        todoList.addTask("test");
+        boolean remove2 = todoList.removeTask("test");
+        assertTrue(remove2);
     }
 }
