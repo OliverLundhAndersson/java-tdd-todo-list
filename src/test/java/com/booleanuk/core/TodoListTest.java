@@ -76,4 +76,13 @@ class TodoListTest {
         boolean incomplete3 = todoList.incompleteTask("test1");
         assertFalse(incomplete3);
     }
+
+    @Test
+    public void testGetCompletedTasks() {
+        todoList = new TodoList();
+        todoList.addTask("test");
+        todoList.addTask("test2");
+        ArrayList<Task> completed1 = todoList.getCompletedTasks();
+        assertEquals(completed1.size(), 0);
+    }
 }
