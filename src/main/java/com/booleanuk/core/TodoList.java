@@ -43,6 +43,7 @@ public class TodoList {
                 return task.setCompleted();
             }
         }
+        System.out.println(name + " is not the name of a task.");
         return false;
     }
 }

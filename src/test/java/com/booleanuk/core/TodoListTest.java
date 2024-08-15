@@ -57,5 +57,8 @@ class TodoListTest {
 
         boolean complete2 = todoList.completeTask("test");
         assertFalse(complete2);
+
+        boolean complete3 = todoList.completeTask("test1");
+        assertFalse(complete3);
     }
 }
