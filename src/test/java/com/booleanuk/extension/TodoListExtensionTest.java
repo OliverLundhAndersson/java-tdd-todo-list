@@ -135,9 +135,11 @@ public class TodoListExtensionTest {
         boolean search1 = todoList.search("test");
         assertFalse(search1);
 
-        todoList.addTask("test");
+        int id0 = todoList.addTask("test");
         boolean search2 = todoList.search("test");
         assertTrue(search2);
+        boolean search4 = todoList.search(id0);
+        assertTrue(search4);
 
         todoList.removeTask("test");
         boolean search3 = todoList.search("test");
