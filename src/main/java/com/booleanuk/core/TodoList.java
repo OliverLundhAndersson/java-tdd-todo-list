@@ -94,6 +94,13 @@ public class TodoList {
     }
 
     public boolean removeTask(String name) {
+        for (Task task : tasks) {
+            if (task.getName().equals(name)) {
+                tasks.remove(task);
+                System.out.println(name + " was removed from the todo-list");
+                return true;
+            }
+        }
         return false;
     }
 }
