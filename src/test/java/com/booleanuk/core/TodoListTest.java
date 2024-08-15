@@ -41,4 +41,12 @@ class TodoListTest {
         assertEquals(view3.get(1).getName(), "test1");
         assertEquals(view3.get(2).getName(), "test");
     }
+
+    @Test
+    public void testCompleteTask() {
+        todoList = new TodoList();
+        todoList.addTask("test");
+        boolean complete1 = todoList.completeTask("test");
+        assertTrue(complete1);
+    }
 }

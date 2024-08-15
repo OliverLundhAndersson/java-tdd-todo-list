@@ -36,5 +36,9 @@ public class TodoList {
         }
         return tasks;
     }
+
+    public boolean completeTask(String name) {
+        return true;
+    }
 }
 
