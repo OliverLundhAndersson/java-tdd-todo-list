@@ -131,4 +131,11 @@ class TodoListTest {
         boolean search2 = todoList.search("test");
         assertTrue(search2);
     }
+
+    @Test
+    public void testRemoveTask() {
+        todoList = new TodoList();
+        boolean remove1 = todoList.removeTask("test");
+        assertFalse(remove1);
+    }
 }
