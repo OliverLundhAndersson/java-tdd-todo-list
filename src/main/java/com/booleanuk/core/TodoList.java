@@ -81,5 +81,16 @@ public class TodoList {
         }
         return incompleteTasks;
     }
+
+    public boolean search(String name) {
+        for (Task task : tasks) {
+            if (task.getName().equals(name)) {
+                System.out.println(task.getName() + " is completed: " + task.isCompleted());
+                return true;
+            }
+        }
+        System.out.println("Task was not found");
+        return false;
+    }
 }
 
