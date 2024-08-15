@@ -1,13 +1,17 @@
 package com.booleanuk.extension;
 
+import java.util.Date;
+
 public class TaskExtension {
     private boolean completed = false;
     private String name;
     private final int id;
+    private Date date;
 
     public TaskExtension(String name, int id) {
         this.name = name;
         this.id = id;
+        this.date = new Date();
     }
 
     public boolean isCompleted() {
@@ -20,6 +24,10 @@ public class TaskExtension {
 
     public int getId() {
         return id;
+    }
+
+    public Date getDate() {
+        return date;
     }
 
     public boolean setCompleted() {
