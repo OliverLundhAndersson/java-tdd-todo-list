@@ -1,6 +1,5 @@
 package com.booleanuk.core;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -109,5 +108,7 @@ class TodoListTest {
         todoList.addTask("test2");
         ArrayList<Task> incomplete1 = todoList.getIncompleteTasks();
         assertEquals(incomplete1.size(), 2);
+
+
     }
 }

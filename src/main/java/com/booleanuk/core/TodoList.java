@@ -1,7 +1,6 @@
 package com.booleanuk.core;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class TodoList {
@@ -30,7 +29,7 @@ public class TodoList {
 
     public ArrayList<Task> viewTask(boolean ascending) {
         if (ascending) {
-            ArrayList<Task> reverseTasks = new ArrayList<Task>(tasks);
+            ArrayList<Task> reverseTasks = new ArrayList<>(tasks);
             Collections.reverse(reverseTasks);
             for (Task task : reverseTasks) {
                 System.out.println(task.getName() + " is completed: " + task.isCompleted());
