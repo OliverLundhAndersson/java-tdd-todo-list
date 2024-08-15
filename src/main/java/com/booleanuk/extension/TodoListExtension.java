@@ -117,4 +117,14 @@ public class TodoListExtension {
         }
         return false;
     }
+
+
+    public TaskExtension getTask(int id) {
+        for (TaskExtension task : tasks) {
+            if (task.getId() == id) {
+                return task;
+            }
+        }
+        return null;
+    }
 }

@@ -3,6 +3,7 @@ package com.booleanuk.extension;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -160,6 +161,14 @@ public class TodoListExtensionTest {
         assertTrue(remove2);
         boolean remove3 = todoList.removeTask(id0);
         assertFalse(remove3);
+    }
+
+
+    @Test
+    public void testDate() {
+        todoList = new TodoListExtension();
+        int id0 = todoList.addTask("dateTest");
+        assertInstanceOf(Date.class, todoList.getTask(id0).getDate());
     }
 }
 
