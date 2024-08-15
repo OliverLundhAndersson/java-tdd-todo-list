@@ -126,5 +126,9 @@ class TodoListTest {
         todoList = new TodoList();
         boolean search1 = todoList.search("test");
         assertFalse(search1);
+
+        todoList.addTask("test");
+        boolean search2 = todoList.search("test");
+        assertTrue(search2);
     }
 }
