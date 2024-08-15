@@ -49,5 +49,5 @@ Domain model extension
 |          |                         |                                        | Tried to set task to completed but task is already completed             | Return 'false'                                               |
 |          |                         | 'setIncomplete()'                      | Set task to incomplete if task is completed                              | Return 'true'                                                |
 |          |                         |                                        | Tried to set task to incomplete but task is already incomplete           | Return 'false'                                               |
-|          | 'String name'           | 'editName(String newName)'             | Change the name to 'newName'                                             | Return 'true'                                                 |
+|          | 'String name'           | 'setName(String newName)'              | Change the name to 'newName'                                             | Return 'true'                                                 |
 |          | 'int id'                |                                        |                                                                          |                                                              |

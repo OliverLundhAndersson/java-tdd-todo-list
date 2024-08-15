@@ -178,6 +178,7 @@ public class TodoListExtensionTest {
         int id0 = todoList.addTask("dateTest");
         boolean editName1 = todoList.editTaskName(id0, "Testing new name");
         assertTrue(editName1);
+        assertEquals(todoList.getTask(id0).getName(), "Testing new name");
     }
 }
 

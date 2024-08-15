@@ -22,6 +22,10 @@ public class TaskExtension {
         return name;
     }
 
+    public void setName(String newName) {
+        this.name = newName;
+    }
+
     public int getId() {
         return id;
     }

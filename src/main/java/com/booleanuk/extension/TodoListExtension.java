@@ -103,7 +103,7 @@ public class TodoListExtension {
                 return true;
             }
         }
-        System.out.println("Task was not found");
+        System.out.println(id + " is not the id of a task.");
         return false;
     }
 
@@ -125,6 +125,20 @@ public class TodoListExtension {
                 return task;
             }
         }
+        System.out.println(id + " is not the id of a task.");
         return null;
+    }
+
+
+    public boolean editTaskName(int id, String newName) {
+        for (TaskExtension task : tasks) {
+            if (task.getId() == id) {
+                task.setName(newName);
+                System.out.println("The tasks new name is" + newName);
+                return true;
+            }
+        }
+        System.out.println(id + " is not the id of a task.");
+        return false;
     }
 }
