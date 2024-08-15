@@ -170,5 +170,14 @@ public class TodoListExtensionTest {
         int id0 = todoList.addTask("dateTest");
         assertInstanceOf(Date.class, todoList.getTask(id0).getDate());
     }
+
+
+    @Test
+    public void testEditTaskName() {
+        todoList = new TodoListExtension();
+        int id0 = todoList.addTask("dateTest");
+        boolean editName1 = todoList.editTaskName(id0, "Testing new name");
+        assertTrue(editName1);
+    }
 }
 
