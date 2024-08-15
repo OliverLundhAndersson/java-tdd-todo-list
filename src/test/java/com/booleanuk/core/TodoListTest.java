@@ -109,6 +109,15 @@ class TodoListTest {
         ArrayList<Task> incomplete1 = todoList.getIncompleteTasks();
         assertEquals(incomplete1.size(), 2);
 
+        todoList.completeTask("test");
+        ArrayList<Task> incomplete2 = todoList.getIncompleteTasks();
+        assertEquals(incomplete2.size(), 1);
+        assertEquals(incomplete2.getFirst().getName(), "test2");
 
+        todoList.incompleteTask("test");
+        ArrayList<Task> incomplete3 = todoList.getIncompleteTasks();
+        assertEquals(incomplete3.size(), 2);
+        assertEquals(incomplete3.getFirst().getName(), "test");
+        assertEquals(incomplete3.get(1).getName(), "test2");
     }
 }
