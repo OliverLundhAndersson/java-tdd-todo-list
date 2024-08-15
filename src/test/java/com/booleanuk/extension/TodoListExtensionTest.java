@@ -150,13 +150,13 @@ public class TodoListExtensionTest {
     @Test
     public void testRemoveTask() {
         todoList = new TodoListExtension();
-        boolean remove1 = todoList.removeTask("test");
+        boolean remove1 = todoList.removeTask(0);
         assertFalse(remove1);
 
-        todoList.addTask("test");
-        boolean remove2 = todoList.removeTask("test");
+        int id0 = todoList.addTask("test");
+        boolean remove2 = todoList.removeTask(id0);
         assertTrue(remove2);
-        boolean remove3 = todoList.removeTask("test");
+        boolean remove3 = todoList.removeTask(id0);
         assertFalse(remove3);
     }
 }
