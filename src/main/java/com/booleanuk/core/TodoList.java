@@ -32,7 +32,13 @@ public class TodoList {
         if (ascending) {
             ArrayList<Task> reverseTasks = new ArrayList<Task>(tasks);
             Collections.reverse(reverseTasks);
+            for (Task task : reverseTasks) {
+                System.out.println(task.getName() + " is completed: " + task.isCompleted());
+            }
             return reverseTasks;
+        }
+        for (Task task : tasks) {
+            System.out.println(task.getName() + " is completed: " + task.isCompleted());
         }
         return tasks;
     }

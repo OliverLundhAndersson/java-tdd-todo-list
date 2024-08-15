@@ -1,11 +1,16 @@
 package com.booleanuk.core;
 
 public class Task {
-    boolean completed = false;
+
+    private boolean completed = false;
     private String name;
 
     public Task(String name) {
         this.name = name;
+    }
+
+    public boolean isCompleted() {
+        return completed;
     }
 
     public String getName() {
