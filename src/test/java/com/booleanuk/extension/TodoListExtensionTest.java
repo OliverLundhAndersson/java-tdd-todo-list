@@ -69,15 +69,15 @@ public class TodoListExtensionTest {
     @Test
     public void testIncompleteTask() {
         todoList = new TodoListExtension();
-        todoList.addTask("test");
-        boolean incomplete1 = todoList.incompleteTask("test");
+        int id0 = todoList.addTask("test");
+        boolean incomplete1 = todoList.incompleteTask(id0);
         assertFalse(incomplete1);
 
-        todoList.completeTask("test");
-        boolean incomplete2 = todoList.incompleteTask("test");
+        todoList.completeTask(id0);
+        boolean incomplete2 = todoList.incompleteTask(id0);
         assertTrue(incomplete2);
 
-        boolean incomplete3 = todoList.incompleteTask("test1");
+        boolean incomplete3 = todoList.incompleteTask(1);
         assertFalse(incomplete3);
     }
 
@@ -85,47 +85,47 @@ public class TodoListExtensionTest {
     @Test
     public void testGetCompletedTasks() {
         todoList = new TodoListExtension();
-        todoList.addTask("test");
-        todoList.addTask("test2");
+        int id0 = todoList.addTask("test");
+        int id1 = todoList.addTask("test2");
         ArrayList<TaskExtension> completed1 = todoList.getCompletedTasks();
         assertEquals(completed1.size(), 0);
 
-        todoList.completeTask("test");
+        todoList.completeTask(id0);
         ArrayList<TaskExtension> completed2 = todoList.getCompletedTasks();
         assertEquals(completed2.size(), 1);
-        assertEquals(completed2.getFirst().getName(), "test");
+        assertEquals(completed2.getFirst().getId(), id0);
 
-        todoList.completeTask("test2");
+        todoList.completeTask(id1);
         ArrayList<TaskExtension> completed3 = todoList.getCompletedTasks();
         assertEquals(completed3.size(), 2);
-        assertEquals(completed3.getFirst().getName(), "test");
-        assertEquals(completed3.get(1).getName(), "test2");
+        assertEquals(completed3.getFirst().getId(), id0);
+        assertEquals(completed3.get(1).getId(), id1);
 
-        todoList.incompleteTask("test");
+        todoList.incompleteTask(id0);
         ArrayList<TaskExtension> completed4 = todoList.getCompletedTasks();
         assertEquals(completed4.size(), 1);
-        assertEquals(completed4.getFirst().getName(), "test2");
+        assertEquals(completed4.getFirst().getId(), id1);
     }
 
 
     @Test
     public void testGetIncompleteTasks() {
         todoList = new TodoListExtension();
-        todoList.addTask("test");
-        todoList.addTask("test2");
+        int id0 = todoList.addTask("test");
+        int id1 = todoList.addTask("test2");
         ArrayList<TaskExtension> incomplete1 = todoList.getIncompleteTasks();
         assertEquals(incomplete1.size(), 2);
 
-        todoList.completeTask("test");
+        todoList.completeTask(id0);
         ArrayList<TaskExtension> incomplete2 = todoList.getIncompleteTasks();
         assertEquals(incomplete2.size(), 1);
-        assertEquals(incomplete2.getFirst().getName(), "test2");
+        assertEquals(incomplete2.getFirst().getId(), id1);
 
-        todoList.incompleteTask("test");
+        todoList.incompleteTask(id0);
         ArrayList<TaskExtension> incomplete3 = todoList.getIncompleteTasks();
         assertEquals(incomplete3.size(), 2);
-        assertEquals(incomplete3.getFirst().getName(), "test");
-        assertEquals(incomplete3.get(1).getName(), "test2");
+        assertEquals(incomplete3.getFirst().getId(), id0);
+        assertEquals(incomplete3.get(1).getId(), id1);
     }
 
 

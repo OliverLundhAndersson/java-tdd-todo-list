@@ -41,23 +41,23 @@ public class TodoListExtension {
         return tasks;
     }
 
-    public boolean completeTask(String name) {
+    public boolean completeTask(int id) {
         for (TaskExtension task : tasks) {
-            if (task.getName().equals(name)) {
+            if (task.getId() == id) {
                 return task.setCompleted();
             }
         }
-        System.out.println(name + " is not the name of a task.");
+        System.out.println(id + " is not the id of a task.");
         return false;
     }
 
-    public boolean incompleteTask(String name) {
+    public boolean incompleteTask(int id) {
         for (TaskExtension task : tasks) {
-            if (task.getName().equals(name)) {
+            if (task.getId() == id) {
                 return task.setIncomplete();
             }
         }
-        System.out.println(name + " is not the name of a task.");
+        System.out.println(id + " is not the id of a task.");
         return false;
     }
 
