@@ -25,5 +25,9 @@ public class TodoList {
         tasks.add(task);
         return true;
     }
+
+    public ArrayList<Task> viewTask(boolean ascending) {
+        return tasks;
+    }
 }
 

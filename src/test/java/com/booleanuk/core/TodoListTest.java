@@ -22,7 +22,7 @@ class TodoListTest {
     @Test
     public void testViewTask() {
         todoList = new TodoList();
-        ArrayList<Task> view1 = todoList.viewTask();
+        ArrayList<Task> view1 = todoList.viewTask(true);
         assertEquals(view1.size(), 0);
     }
 }
